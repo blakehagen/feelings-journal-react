@@ -1,0 +1,67 @@
+.container {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  padding-bottom: 12px;
+  padding-top: 10px;
+  border-radius: 2px;
+  &:hover {
+    background: #EDEDED;
+  }
+  p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.emotion {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 3px;
+  background-size: cover;
+}
+
+.happy {
+  @extend .emotion;
+  background: url('./images/happy.svg') no-repeat center center;
+}
+
+.excited {
+  @extend .emotion;
+  background: url('./images/excited.svg') no-repeat center center;
+}
+
+.shy {
+  @extend .emotion;
+  background: url('./images/shy.svg') no-repeat center center;
+}
+
+.mad {
+  @extend .emotion;
+  background: url('./images/mad.svg') no-repeat center center;
+}
+
+.nervous {
+  @extend .emotion;
+  background: url('./images/nervous.svg') no-repeat center center;
+}
+
+.sad {
+  @extend .emotion;
+  background: url('./images/sad.svg') no-repeat center center;
+}
+
+.scared {
+  @extend .emotion;
+  background: url('./images/scared.svg') no-repeat center center;
+}
+
+.bored {
+  @extend .emotion;
+  background: url('./images/bored.svg') no-repeat center center;
+}
