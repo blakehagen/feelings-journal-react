@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './feelingsBox.scss';
-import Feeling from '../../../App/UserMain/Feeling/Feeling';
+import Feeling from '..//Feeling/Feeling';
 
 export default class FeelingsBox extends React.Component {
   render() {
@@ -11,15 +11,14 @@ export default class FeelingsBox extends React.Component {
         </div>
         <div className={styles.feelingsContainer}>
           <Feeling name="Happy" />
-          <Feeling name="Excited" />
-          <Feeling name="Shy" />
-          <Feeling name="Mad" />
-          <Feeling name="Nervous" />
-          <Feeling name="Sad" />
-          <Feeling name="Scared" />
-          <Feeling name="Bored" />
+          <Feeling name="Excited"/>
+          <Feeling name="Shy"/>
+          <Feeling name="Mad"/>
+          <Feeling name="Nervous"/>
+          <Feeling name="Sad"/>
+          <Feeling name="Scared"/>
+          <Feeling name="Bored"/>
         </div>
-
       </div>
     )
   }

@@ -46,7 +46,7 @@ export default class Feeling extends React.Component {
     }
 
     return (
-      <div className={styles.container}>
+      <div className={styles.container} onClick={this.test}>
         <div className={styles.emotion}>
           {feelingImage}
         </div>

@@ -1,12 +1,16 @@
-const autoprefixer            = require('autoprefixer');
-const webpack                 = require('webpack');
-const webpackConfig           = new webpack.HotModuleReplacementPlugin();
+const autoprefixer = require('autoprefixer');
+const path         = require('path');
+
+const webpack       = require('webpack');
+const webpackConfig = new webpack.HotModuleReplacementPlugin();
+
 const HtmlWebpackPlugin       = require('html-webpack-plugin');
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
   inject: 'body'
 });
+
 const ExtractTextPlugin       = require('extract-text-webpack-plugin');
 const ExtractTextPluginConfig = new ExtractTextPlugin('styles.css');
 
@@ -14,7 +18,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
     'webpack/hot/dev-server',
-    './app/index.js'
+    './app/Main.jsx'
   ],
   output: {
     path: __dirname + '/dist',
@@ -25,7 +29,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js?$/,
+        test: /\.jsx?$/,
         cacheable: true,
         exclude: /node_modules/,
         loaders: ['babel-loader']
@@ -50,7 +54,9 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js'],
+    root: path.resolve('./app'),
+
   },
   postcss: [autoprefixer],
   plugins: [HTMLWebpackPluginConfig, ExtractTextPluginConfig, webpackConfig]
