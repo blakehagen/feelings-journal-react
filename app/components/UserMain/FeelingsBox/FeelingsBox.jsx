@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './feelingsBox.scss';
-import Feeling from '..//Feeling/Feeling';
+import Feeling from 'components/UserMain/Feeling';
 
 export default class FeelingsBox extends React.Component {
   render() {

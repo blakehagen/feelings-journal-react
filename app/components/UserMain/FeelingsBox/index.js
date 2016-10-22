@@ -1,1 +1,1 @@
-export default from './FeelingsBox';
+export {default} from './FeelingsBox.jsx';

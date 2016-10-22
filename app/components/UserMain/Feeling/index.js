@@ -1,1 +1,1 @@
-export default from './Feeling';
+export {default} from './Feeling.jsx';

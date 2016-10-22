@@ -28,40 +28,40 @@
 
 .happy {
   @extend .emotion;
-  background: url('images/happy.svg') no-repeat center center;
+  background: url('./images/happy.svg') no-repeat center center;
 }
 
 .excited {
   @extend .emotion;
-  background: url('images/excited.svg') no-repeat center center;
+  background: url('./images/excited.svg') no-repeat center center;
 }
 
 .shy {
   @extend .emotion;
-  background: url('images/shy.svg') no-repeat center center;
+  background: url('./images/shy.svg') no-repeat center center;
 }
 
 .mad {
   @extend .emotion;
-  background: url('images/mad.svg') no-repeat center center;
+  background: url('./images/mad.svg') no-repeat center center;
 }
 
 .nervous {
   @extend .emotion;
-  background: url('images/nervous.svg') no-repeat center center;
+  background: url('./images/nervous.svg') no-repeat center center;
 }
 
 .sad {
   @extend .emotion;
-  background: url('images/sad.svg') no-repeat center center;
+  background: url('./images/sad.svg') no-repeat center center;
 }
 
 .scared {
   @extend .emotion;
-  background: url('images/scared.svg') no-repeat center center;
+  background: url('./images/scared.svg') no-repeat center center;
 }
 
 .bored {
   @extend .emotion;
-  background: url('images/bored.svg') no-repeat center center;
+  background: url('./images/bored.svg') no-repeat center center;
 }
