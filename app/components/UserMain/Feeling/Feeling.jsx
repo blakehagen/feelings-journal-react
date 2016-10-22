@@ -54,4 +54,8 @@ export default class Feeling extends React.Component {
       </div>
     )
   }
+
+  test(){
+    console.log('this is a test');
+  }
 }
