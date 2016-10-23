@@ -1,7 +1,14 @@
 import React from 'react';
+import {observer} from 'mobx-react'
 import styles from './feeling.scss';
 
+@observer(['feelingStore'])
 export default class Feeling extends React.Component {
+  constructor(props) {
+    super(props);
+    this.goToJournal = this.goToJournal.bind(this);
+  }
+
   render() {
     let feelingImage;
     if (this.props.name === 'Happy') {
@@ -46,7 +53,7 @@ export default class Feeling extends React.Component {
     }
 
     return (
-      <div className={styles.container} onClick={this.test}>
+      <div className={styles.container} onClick={this.goToJournal.bind(this, this.props.name)}>
         <div className={styles.emotion}>
           {feelingImage}
         </div>
@@ -55,7 +62,8 @@ export default class Feeling extends React.Component {
     )
   }
 
-  test(){
-    console.log('this is a test');
+  goToJournal(currentFeeling) {
+    this.props.feelingStore.name = currentFeeling;
+    location.assign("#/user/journal");
   }
 }
