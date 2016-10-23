@@ -1,5 +1,5 @@
 .container {
-  width: 100px;
+  width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@
   }
   p {
     font-family: 'Lato', sans-serif;
+    color: #455A64;
     font-weight: 300;
     font-size: 16px;
     cursor: pointer;
@@ -20,8 +21,8 @@
 }
 
 .emotion {
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   margin-bottom: 3px;
   background-size: cover;
 }
