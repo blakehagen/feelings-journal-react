@@ -16,9 +16,7 @@ const ExtractTextPluginConfig = new ExtractTextPlugin('styles.css');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:5175',
-    'webpack/hot/dev-server',
-    './app/Main.jsx'
+    './app/Main.jsx', 'webpack-hot-middleware/client?reload=true'
   ],
   output: {
     path: __dirname + '/dist',
@@ -59,5 +57,5 @@ module.exports = {
 
   },
   postcss: [autoprefixer],
-  plugins: [HTMLWebpackPluginConfig, ExtractTextPluginConfig, webpackConfig]
+  plugins: [HTMLWebpackPluginConfig, ExtractTextPluginConfig, webpackConfig, new webpack.HotModuleReplacementPlugin()]
 };
