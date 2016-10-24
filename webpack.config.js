@@ -16,7 +16,7 @@ const ExtractTextPluginConfig = new ExtractTextPlugin('styles.css');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3000',
+    'webpack-dev-server/client?http://0.0.0.0:5175',
     'webpack/hot/dev-server',
     './app/Main.jsx'
   ],

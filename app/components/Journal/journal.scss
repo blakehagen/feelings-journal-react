@@ -1,7 +1,93 @@
-.journalContainer {
+.container {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.journalEntry {
+  width: 500px;
+  background: #FFF;
+  .title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #C8D7FF;
+    padding-bottom: 4px;
+    .feelingImgBox {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 34px;
+      width: 34px;
+      margin-right: 6px;
+    }
+    p {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 24px;
+      color: #455A64;
+      cursor: default;
+    }
+  }
+  .entryContent {
+    width: 100%;
+    height: 300px;
+  }
+  .entryFooter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 52px;
+    width: 100%;
+    border-top: 1px solid #C8D7FF;
+  }
+}
+
+.feelingImg {
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+}
+
+.happy {
+  @extend .feelingImg;
+  background: url('./images/happy.svg') no-repeat center center;
+}
+
+.excited {
+  @extend .feelingImg;
+  background: url('./images/excited.svg') no-repeat center center;
+}
+
+.shy {
+  @extend .feelingImg;
+  background: url('./images/shy.svg') no-repeat center center;
+}
+
+.mad {
+  @extend .feelingImg;
+  background: url('./images/mad.svg') no-repeat center center;
+}
+
+.nervous {
+  @extend .feelingImg;
+  background: url('./images/nervous.svg') no-repeat center center;
+}
+
+.sad {
+  @extend .feelingImg;
+  background: url('./images/sad.svg') no-repeat center center;
+}
+
+.scared {
+  @extend .feelingImg;
+  background: url('./images/scared.svg') no-repeat center center;
+}
+
+.bored {
+  @extend .feelingImg;
+  background: url('./images/bored.svg') no-repeat center center;
 }
