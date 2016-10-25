@@ -1,11 +1,14 @@
-const express              = require('express');
 const webpack              = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const path                 = require('path');
 const config               = require('./webpack.config');
+const express              = require('./server/config/express.js');
+let port                   = process.env.PORT || 5175;
+const app                  = express();
 
-const app = express();
+// DB CONFIG//
+require('./server/config/db')();
 
 if (process.env !== 'production') {
   const compiler          = webpack(config);
@@ -32,6 +35,11 @@ if (process.env !== 'production') {
   });
 }
 
-app.listen(5555, () => {
-  console.log('Example app listening on port 5555!');
+// TEST ROUTE //
+app.get('/api/v1/test', (req, res) => {
+  res.status(200).send('Light \'em up! We good to go!');
+});
+
+app.listen(port, () => {
+  console.log('Listening on port', port);
 });
