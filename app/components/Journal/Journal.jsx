@@ -1,7 +1,9 @@
+import _ from 'lodash';
 import React from 'react';
 import {observer} from 'mobx-react';
 import TopBar from 'components/TopBar';
-import ActionButton from 'components/Journal/ActionButton'
+import ActionButton from 'components/Journal/ActionButton';
+import JournalInput from 'components/Journal/JournalInput';
 import styles from './journal.scss';
 
 @observer(['userStore', 'feelingStore'])
@@ -12,6 +14,8 @@ export default class Journal extends React.Component {
   }
 
   render() {
+
+    let feelingLowerCase = _.lowerFirst(this.feeling);
 
     let feelingImage;
     if (this.feeling === 'Happy') {
@@ -54,6 +58,11 @@ export default class Journal extends React.Component {
         <div className={styles.bored}/>
       );
     }
+    if (!this.feeling) {
+      feelingImage = (
+        <div className={styles.happy}/>
+      );
+    }
 
     return (
       <div className={styles.container}>
@@ -67,6 +76,12 @@ export default class Journal extends React.Component {
 
           </div>
           <div className={styles.entryContent}>
+            <div className={styles.inputContainer}>
+              <div className={styles.question}>
+                I wonder why I feel {feelingLowerCase}?
+              </div>
+              <JournalInput />
+            </div>
 
           </div>
           <div className={styles.entryFooter}>
