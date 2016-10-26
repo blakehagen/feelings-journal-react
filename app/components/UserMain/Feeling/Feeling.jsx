@@ -63,7 +63,7 @@ export default class Feeling extends React.Component {
   }
 
   goToJournal(currentFeeling) {
-    this.props.feelingStore.name = currentFeeling;
+    this.props.feelingStore.currentFeeling = currentFeeling;
     location.assign("#/user/journal");
   }
 }

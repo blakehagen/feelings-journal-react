@@ -8,7 +8,7 @@ import styles from './journal.scss';
 export default class Journal extends React.Component {
   constructor(props) {
     super(props);
-    this.feeling = this.props.feelingStore.name;
+    this.feeling = this.props.feelingStore.currentFeeling;
   }
 
   render() {

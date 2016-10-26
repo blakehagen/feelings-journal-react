@@ -1,7 +1,13 @@
 import {observable} from 'mobx';
+import autoBind from 'react-autobind';
 
-const feeling = observable({
-  name: null
-});
+export default class UserStore {
+  @observable user;
 
-export default feeling;
+  constructor() {
+    autoBind(this);
+    this.feeling = {
+      currentFeeling: undefined
+    };
+  }
+}

@@ -11,11 +11,14 @@ import UserStore from './stores/UserStore';
 import FeelingStore from './stores/FeelingStore';
 import TestStore from './stores/TestStore';
 
-const testStore       = new TestStore();
+const testStore    = new TestStore();
+const userStore    = new UserStore();
+const feelingStore = new FeelingStore();
+
 
 ReactDOM.render(
   <div className={styles.body}>
-    <Provider userStore={UserStore} feelingStore={FeelingStore} testStore={testStore}>
+    <Provider userStore={userStore} feelingStore={feelingStore} testStore={testStore}>
       <Router history={hashHistory}>
         <Route path='/' component={App}/>
         <Route path='/test' component={TestPersonForm}/>

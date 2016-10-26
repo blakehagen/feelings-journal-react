@@ -7,7 +7,8 @@ export default class TestPersonForm extends React.Component {
     super(props);
     this.updateProperty = this.updateProperty.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.user = this.props.userStore;
+    this.user = this.props.userStore.user;
+    console.log('this.user', this.user);
   }
 
   updateProperty (key, value) {
@@ -21,12 +22,11 @@ export default class TestPersonForm extends React.Component {
   }
 
   render () {
-
     return (
-      <div>
+      <div style={{padding: '30px'}}>
         <h1>My Person Form</h1>
         <form>
-          <input type="text" name="fullName" value={this.user.fullName} onChange={this.onChange}/>
+          <input style={{width: '200px'}} type="text" name="fullName" value={this.user.fullName} onChange={this.onChange}/>
         </form>
       </div>
     )
