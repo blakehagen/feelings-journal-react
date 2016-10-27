@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import {observer} from 'mobx-react';
 import TopBar from 'components/TopBar';
@@ -19,8 +18,6 @@ export default class Journal extends React.Component {
       this.noFeelingSelected();
       return null;
     }
-
-    let feelingLowerCase = _.lowerFirst(this.feeling);
 
     let feelingImage;
     if (this.feeling === 'Happy') {
@@ -81,7 +78,7 @@ export default class Journal extends React.Component {
 
           </div>
           <div className={styles.entryContent}>
-            <JournalInput currentFeeling={feelingLowerCase}/>
+            <JournalInput/>
           </div>
           <div className={styles.entryFooter}>
             <ActionButton action="Cancel"/>

@@ -1,7 +1,7 @@
 import {observable} from 'mobx';
 import autoBind from 'react-autobind';
 
-export default class UserStore {
+export default class FeelingStore {
   @observable feeling;
 
   constructor() {
