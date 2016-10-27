@@ -14,6 +14,7 @@ export default class TopBar extends React.Component {
   }
 
   signOut(){
+    localStorage.setItem('currentFeeling', undefined);
     location.assign("#/");
   }
 }

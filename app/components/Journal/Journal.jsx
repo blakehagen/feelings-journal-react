@@ -10,10 +10,15 @@ import styles from './journal.scss';
 export default class Journal extends React.Component {
   constructor(props) {
     super(props);
-    this.feeling = this.props.feelingStore.currentFeeling;
+    this.feeling = this.props.feelingStore.currentFeeling ? this.props.feelingStore.currentFeeling : localStorage.currentFeeling;
   }
 
   render() {
+
+    if (!this.feeling) {
+      this.noFeelingSelected();
+      return null;
+    }
 
     let feelingLowerCase = _.lowerFirst(this.feeling);
 
@@ -76,13 +81,7 @@ export default class Journal extends React.Component {
 
           </div>
           <div className={styles.entryContent}>
-            <div className={styles.inputContainer}>
-              <div className={styles.question}>
-                I wonder why I feel {feelingLowerCase}?
-              </div>
-              <JournalInput />
-            </div>
-
+            <JournalInput currentFeeling={feelingLowerCase}/>
           </div>
           <div className={styles.entryFooter}>
             <ActionButton action="Cancel"/>
@@ -91,5 +90,9 @@ export default class Journal extends React.Component {
         </div>
       </div>
     )
+  }
+
+  noFeelingSelected() {
+    location.assign("#/user/");
   }
 }

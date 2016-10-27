@@ -64,6 +64,7 @@ export default class Feeling extends React.Component {
 
   goToJournal(currentFeeling) {
     this.props.feelingStore.currentFeeling = currentFeeling;
+    localStorage.setItem('currentFeeling', currentFeeling);
     location.assign("#/user/journal");
   }
 }
