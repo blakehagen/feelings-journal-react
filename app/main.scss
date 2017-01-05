@@ -7,21 +7,3 @@
   height: 100vh;
   width: 100%;
 }
-
-
-
-:global(::-webkit-input-placeholder) {
-  color: #575757;
-}
-
-:global(:-moz-placeholder) {
-  color: #575757;
-}
-
-:global(::-moz-placeholder) {
-  color: #575757;
-}
-
-:global(:-ms-input-placeholder ) {
-  color: #575757;
-}

@@ -12,13 +12,28 @@ export default class Journal extends React.Component {
 
   render() {
 
-    let feelingLowerCase = _.lowerFirst(this.feeling);
-    let placeholder      = `I wonder why I feel ${feelingLowerCase}?`;
+    let feelingLowerCase     = _.lowerFirst(this.feeling);
+    let placeholderMain      = `I wonder why I feel ${feelingLowerCase}?`;
+    let placeholderSecondary = `If I wasn't feeling ${feelingLowerCase}, what would I be doing right now?`;
 
-    return (
-      <div>
-        <textarea className={styles.journalField} placeholder={placeholder}></textarea>
-      </div>
-    )
+    let journalInput;
+
+    if (feelingLowerCase === 'happy' || feelingLowerCase === 'excited') {
+      console.log('feelingLowerCase', feelingLowerCase);
+      journalInput = (
+        <div className={styles.journalInput}>
+          <textarea className={styles.whyTextArea} placeholder={placeholderMain} />
+        </div>
+      )
+    } else {
+      journalInput = (
+        <div className={styles.journalInput}>
+          <textarea className={styles.whyTextArea} placeholder={placeholderMain} />
+          <textarea className={styles.whatTextArea} placeholder={placeholderSecondary} />
+        </div>
+      )
+    }
+
+    return journalInput;
   }
 }
